@@ -5,12 +5,14 @@ const NewsItem = (props) => {
     let {title, description, imageUrl, newsUrl,author, date,source } = props; 
     return (
     <div className='my-3'>
-      <div className="card">
+     <div className="card" style={{ position: 'relative' }}>
         <div style={{
           display: 'flex',
           justifyContent: 'flex-end',
           position: 'absolute',
-          right:'0'
+          right:'0',
+          top: '0',
+          zIndex: 1
         }}>
               <span className="badge rounded-pill bg-danger" >
                 {source}
@@ -18,6 +20,11 @@ const NewsItem = (props) => {
         </div>
               
           <img src={!imageUrl?"https://i.pinimg.com/736x/5f/84/e4/5f84e4c54fa4a9cfb28abed3bd3ca810.jpg":imageUrl} className="card-img-top" alt="..."/>
+
+
+   
+
+
         <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{description}</p>
